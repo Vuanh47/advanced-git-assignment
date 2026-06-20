@@ -5,6 +5,7 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
@@ -16,6 +17,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.git_assignment.ui.theme.GitassignmentTheme
 
+
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +27,7 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             GitassignmentTheme {
+
                 Scaffold(
                     modifier = Modifier.fillMaxSize()
                 ) { innerPadding ->
@@ -40,22 +43,44 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
 
     val context = LocalContext.current
 
-    Button(
-        onClick = {
-            Toast.makeText(
-                context,
-                "Xin chào, 안년하세요",
-                Toast.LENGTH_SHORT
-            ).show()
-        },
+
+    Column(
         modifier = modifier
     ) {
-        Text(text = "Hello $name")
+
+        // Nút Xin chào
+        Button(
+            onClick = {
+                Toast.makeText(
+                    context,
+                    "Xin chào, 안녕하세요",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        ) {
+            Text(text = "Hello $name")
+        }
+
+
+        // Nút Tạm biệt
+        Button(
+            onClick = {
+                Toast.makeText(
+                    context,
+                    "Tạm biệt, 안녕히 가세요",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        ) {
+            Text(text = "Goodbye")
+        }
+
     }
 }
 
@@ -63,7 +88,9 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
+
     GitassignmentTheme {
         Greeting("Android")
     }
+
 }
