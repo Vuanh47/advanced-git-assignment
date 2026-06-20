@@ -73,7 +73,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             onClick = {
                 Toast.makeText(
                     context,
-                    "Tạm biệt, 안녕히 가세요",
+                    "Tạm biệt",
                     Toast.LENGTH_SHORT
                 ).show()
             }
