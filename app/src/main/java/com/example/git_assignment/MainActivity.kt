@@ -49,7 +49,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         onClick = {
             Toast.makeText(
                 context,
-                "Xin chào",
+                "Xin chào, 안년하세요",
                 Toast.LENGTH_SHORT
             ).show()
         },
